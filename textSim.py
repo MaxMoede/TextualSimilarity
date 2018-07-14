@@ -59,12 +59,17 @@ def get_list_of_commits(repo):
 		print("something went wrong... {}".format(error))
 	return listOfCommits
 
-def get_textual_similarity(listOfCommits):
+def get_textual_similarity(listOfCommits, repo):
+	print("hello")
 
 def get_complexity(listOfCommits):
+	print("hello as well")
 
-def get_temporal_locality(listOfCommits):
-
+def get_temporal_locality(listOfCommits, repo):
+	print("getting temporal locality...")
+	#for eachCommit in listOfCommits:
+	#	commitInstance = eachCommit.split()[0]
+	#	p = subprocess.Popen(["git", "show", "--name-only", ])
 
 def main():
 	githubURL = sys.argv[1]
@@ -73,6 +78,7 @@ def main():
 	repo = get_repo(repoPath)
 	os.chdir(repoPath)
 	listOfCommits = get_list_of_commits(repo)
+	get_temporal_locality(listOfCommits, repo)
 
 if __name__ == '__main__':
 	main()
